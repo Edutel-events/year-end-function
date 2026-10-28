@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Edutel Year-End Function 2026 — RSVP</title>
+<meta name="description" content="Save the date: Edutel Year-End Function, Friday 20 November 2026. Kindly RSVP by Friday 30 October 2026.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Save the Date — Edutel Year-End Function 2026">
+<meta property="og:description" content="Friday, 20 November 2026. Kindly RSVP by Friday, 30 October.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  /* Brand: colours, fonts, logo size */
+  :root{
+    --paper:#f8f6f1;          /* page background */
+    --card:#ffffff;           /* RSVP card and organiser panel */
+    --ink:#1c1b19;            /* text, buttons, selected answers */
+    --on-ink:#ffffff;         /* text on top of --ink */
+    --muted:#4a453e;          /* italic and secondary text */
+    --hair:#d9d3c7;           /* thin lines and borders */
+    --error:#9b2c2c;          /* "please fill in..." messages */
+
+    --font-script:'Pinyon Script', cursive;       /* "Save the Date" */
+    --font-display:'Cormorant Garamond', serif;   /* headings, labels, buttons */
+    --font-body:'EB Garamond', serif;             /* everything else */
+
+    --logo-height:64px;
+  }
+
+  *{ box-sizing:border-box; }
+  [hidden]{ display:none !important; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--paper);
+    background-image:radial-gradient(circle at 1px 1px, rgba(28,27,25,0.05) 1px, transparent 0);
+    background-image:radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 0);
+    background-size:22px 22px;
+    color:var(--ink);
+    font-family:var(--font-body);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ max-width:640px; margin:0 auto; padding:56px 28px 72px; }
+
+  .preview-banner{
+    border:1px dashed var(--muted); background:var(--card); color:var(--muted);
+    font-style:italic; font-size:14px; text-align:center; padding:10px 14px; margin:0 0 32px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{ display:flex; align-items:center; gap:18px; }
+  .brand-mark{ flex:0 0 auto; display:flex; align-items:center; }
+  .logo{ display:block; height:var(--logo-height); width:auto; max-width:180px; visibility:hidden; }
+  .logo.loaded{ visibility:visible; }
+  .monogram{
+    display:none; align-items:center; justify-content:center;
+    width:var(--logo-height); height:var(--logo-height); border:1px solid var(--ink); border-radius:50%;
+    font-family:var(--font-display); font-weight:600; font-size:calc(var(--logo-height) * 0.52); line-height:1;
+  }
+  .brand-mark.no-logo .monogram{ display:flex; }
+  .from-label{ font-family:var(--font-display); font-weight:600; letter-spacing:0.2em; font-size:15px; text-transform:uppercase; margin:0 0 6px; }
+  .from-sub{ font-style:italic; color:var(--muted); font-size:16px; margin:0; }
+
+  .rule{ border:none; border-top:1px solid var(--hair); margin:36px 0 26px; }
+
+  /* ---------- Save the Date ---------- */
+  .hero{ text-align:center; margin:0; font-weight:400; }
+  .hero .script{ display:block; font-family:var(--font-script); font-size:clamp(78px, 22vw, 112px); line-height:0.95; }
+  .hero .the{ display:block; font-family:var(--font-script); font-size:clamp(28px, 8vw, 34px); line-height:1; margin:-8px 0 -4px; }
+  .date-line{ text-align:center; font-family:var(--font-display); font-weight:600; letter-spacing:0.06em; font-size:21px; margin:22px 0 0; }
+  .intro{ text-align:center; font-style:italic; color:var(--muted); font-size:17px; line-height:1.5; max-width:470px; margin:12px auto 0; }
+
+  /* ---------- RSVP card ---------- */
+  .card{ background:var(--card); border:1px solid var(--hair); padding:40px 34px; margin-top:44px; position:relative; }
+  .card::before, .card::after{ content:""; position:absolute; width:14px; height:14px; border:1px solid var(--ink); }
+  .card::before{ top:8px; left:8px; border-right:none; border-bottom:none; }
+  .card::after{ bottom:8px; right:8px; border-left:none; border-top:none; }
+  .card h2{ font-family:var(--font-display); font-weight:600; letter-spacing:0.16em; text-transform:uppercase; font-size:17px; text-align:center; margin:0 0 6px; }
+  .card-sub{ text-align:center; font-style:italic; color:var(--muted); font-size:15px; margin:0 0 30px; }
+
+  .label{ display:block; font-family:var(--font-display); font-weight:600; letter-spacing:0.05em; font-size:14px; text-transform:uppercase; margin:24px 0 8px; }
+  form > .label:first-child{ margin-top:0; }
+  .optional{ font-family:var(--font-body); font-weight:400; font-style:italic; text-transform:none; letter-spacing:0; color:var(--muted); }
+
+  input[type="text"], input[type="email"], input[type="tel"], input[type="password"], select{
+    width:100%; font-family:var(--font-body); font-size:17px; color:var(--ink);
+    padding:10px 4px; border:none; border-bottom:1px solid var(--hair); border-radius:0;
+    background:transparent; outline:none; transition:border-color .2s ease;
+  }
+  input:focus, select:focus{ border-bottom-color:var(--ink); }
+  input::placeholder{ color:var(--muted); opacity:0.6; }
+
+  .select-wrap{ position:relative; }
+  .select-wrap::after{
+    content:""; position:absolute; right:8px; top:50%; width:7px; height:7px; pointer-events:none;
+    border-right:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); transform:translateY(-75%) rotate(45deg);
+  }
+  select{ appearance:none; -webkit-appearance:none; padding-right:28px; cursor:pointer; }
+  select:invalid{ color:var(--muted); }
+  option{ color:var(--ink); }
+
+  .fine-print{ font-style:italic; color:var(--muted); font-size:14px; margin:12px 0 0; }
+
+  .toggle-row{ display:flex; gap:12px; }
+  .toggle-btn{
+    flex:1; padding:12px 10px; border:1px solid var(--hair); background:var(--paper); color:var(--ink);
+    font-family:var(--font-display); font-weight:500; letter-spacing:0.08em; font-size:15px; text-transform:uppercase;
+    cursor:pointer; transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .toggle-btn:hover{ border-color:var(--ink); }
+  .toggle-btn[aria-pressed="true"]{ background:var(--ink); color:var(--on-ink); border-color:var(--ink); }
+  button:focus-visible, a:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+
+  .submit-btn{
+    width:100%; margin-top:32px; padding:14px; background:var(--ink); color:var(--on-ink); border:none;
+    font-family:var(--font-display); font-weight:600; letter-spacing:0.14em; text-transform:uppercase; font-size:15px;
+    cursor:pointer; transition:opacity .15s ease;
+  }
+  .submit-btn:hover{ opacity:0.85; }
+  .submit-btn:disabled{ opacity:0.5; cursor:default; }
+
+  .msg{ text-align:center; font-style:italic; color:var(--muted); font-size:15px; margin:16px 0 0; min-height:1.2em; }
+  .msg.error{ color:var(--error); }
+
+  .confirmation{ text-align:center; padding:8px 6px 0; }
+  .confirmation p{ font-size:17px; color:var(--muted); margin:0; }
+  .confirmation .script-small{ font-family:var(--font-script); font-size:52px; line-height:1.1; color:var(--ink); margin:0 0 10px; }
+  .confirmation .note{ font-size:15px; font-style:italic; margin-top:12px; }
+  .link-btn{
+    background:none; border:none; padding:6px; margin-top:14px; cursor:pointer;
+    font-family:var(--font-body); font-style:italic; font-size:15px; color:var(--muted); text-decoration:underline;
+  }
+
+  /* Spam trap: hidden from people, but bots fill it in. */
+  .hp{ position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
+
+  /* ---------- Organiser view ---------- */
+  .host-link{ text-align:center; margin-top:40px; }
+  .host-link button{
+    background:none; border:none; padding:6px; cursor:pointer;
+    font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--muted); text-decoration:underline;
+  }
+  .host-panel{ margin-top:20px; border:1px solid var(--hair); background:var(--card); padding:32px 26px; }
+  .host-gate{ text-align:center; }
+  .host-gate .card-sub{ margin-bottom:14px; }
+  .host-gate input{ display:block; max-width:240px; margin:0 auto 18px; text-align:center; }
+  .small-btn{
+    display:inline-block; background:var(--ink); color:var(--on-ink); border:1px solid var(--ink); padding:9px 18px;
+    font-family:var(--font-display); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:13px;
+    text-decoration:none; cursor:pointer;
+  }
+  .small-btn.ghost{ background:transparent; color:var(--ink); border-color:var(--hair); }
+  .small-btn.ghost:hover{ border-color:var(--ink); }
+
+  .summary-row{ display:flex; justify-content:space-around; text-align:center; padding-bottom:22px; border-bottom:1px solid var(--hair); }
+  .summary-row span{ display:block; font-family:var(--font-body); font-weight:500; font-size:30px; line-height:1.2; font-variant-numeric:lining-nums; }
+  .summary-row small{ font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+
+  .panel-heading{ font-family:var(--font-display); font-weight:600; letter-spacing:0.12em; text-transform:uppercase; font-size:14px; margin:26px 0 6px; }
+  .panel-heading em{ font-family:var(--font-body); font-weight:400; text-transform:none; letter-spacing:0; color:var(--muted); }
+  .diet-list{ list-style:none; margin:0; padding:0; }
+  .diet-list li{ display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px dotted var(--hair); font-size:16px; }
+  .diet-list strong{ font-weight:500; font-variant-numeric:lining-nums tabular-nums; }
+  .panel-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+
+  .guest-entry{ padding:14px 0; border-bottom:1px solid var(--hair); }
+  .guest-entry:last-child{ border-bottom:none; }
+  .g-name{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; font-family:var(--font-display); font-weight:600; font-size:19px; }
+  .g-status{ font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:3px 8px; border:1px solid var(--ink); white-space:nowrap; }
+  .g-status.yes{ background:var(--ink); color:var(--on-ink); }
+  .g-detail{ font-size:15px; color:var(--muted); margin-top:3px; overflow-wrap:anywhere; }
+  .empty-note{ text-align:center; font-style:italic; color:var(--muted); padding:16px 0; margin:0; }
+
+  footer{ text-align:center; font-style:italic; color:var(--muted); font-size:15px; margin-top:56px; }
+
+  @media (max-width:480px){
+    .page{ padding:36px 16px 56px; }
+    .masthead{ gap:14px; }
+    .from-label{ font-size:13px; letter-spacing:0.16em; }
+    .from-sub{ font-size:15px; }
+    .card{ padding:32px 20px; }
+    .toggle-btn{ font-size:14px; letter-spacing:0.05em; padding:12px 6px; }
+    .host-panel{ padding:26px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="preview-banner" id="previewBanner" hidden>Preview only: this page isn't connected to the Google Sheet yet, so RSVPs won't be saved.</p>
+
+  <header class="masthead">
+    <div class="brand-mark">
+      <!-- Tries assets/edutel-logo.svg, then .png; if neither exists, shows the "E" monogram. -->
+      <img class="logo" src="assets/edutel-logo.svg" alt="Edutel"
+           onload="this.classList.add('loaded')"
+           onerror="if (!this.dataset.retried) { this.dataset.retried = '1'; this.src = 'assets/edutel-logo.png'; } else { this.parentNode.classList.add('no-logo'); this.remove(); }">
+      <span class="monogram" aria-hidden="true">E</span>
+    </div>
+    <div>
+      <p class="from-label">Edutel Year-End Function 2026</p>
+      <p class="from-sub">Celebrating our year together</p>
+    </div>
+  </header>
+
+  <hr class="rule">
+
+  <h1 class="hero"><span class="script">Save</span> <span class="the">the</span> <span class="script">Date</span></h1>
+  <p class="date-line"><time datetime="2026-11-20">Friday, 20 November 2026</time></p>
+  <p class="intro">Let’s come together to celebrate the year, reflect on our achievements, and enjoy a memorable time with our colleagues!</p>
+
+  <section class="card" aria-labelledby="rsvpTitle">
+    <h2 id="rsvpTitle">RSVP</h2>
+    <p class="card-sub">Kindly respond by Friday, 30 October 2026</p>
+
+    <form id="rsvpForm" novalidate>
+      <label class="label" for="name">Full name</label>
+      <input type="text" id="name" autocomplete="name" maxlength="100" placeholder="e.g. Thandi Nkosi">
+
+      <label class="label" for="email">Work email</label>
+      <input type="email" id="email" autocomplete="email" maxlength="254" placeholder="We’ll send the event details here">
+
+      <label class="label" for="phone">Cellphone number <span class="optional">(optional)</span></label>
+      <input type="tel" id="phone" autocomplete="tel" maxlength="30" placeholder="e.g. 082 123 4567">
+
+      <p class="label" id="attendingLabel">Will you be attending?</p>
+      <div class="toggle-row" role="group" aria-labelledby="attendingLabel">
+        <button type="button" class="toggle-btn" id="attendYes" data-value="Yes" aria-pressed="false">Joyfully accept</button>
+        <button type="button" class="toggle-btn" id="attendNo" data-value="No" aria-pressed="false">Regretfully decline</button>
+      </div>
+
+      <div id="dietBlock" hidden>
+        <label class="label" for="dietary">Dietary requirement</label>
+        <div class="select-wrap">
+          <select id="dietary" required>
+            <option value="">Please choose…</option>
+          </select>
+        </div>
+        <div id="detailsBlock" hidden>
+          <label class="label" for="dietaryDetails">Please specify your allergy or intolerance</label>
+          <input type="text" id="dietaryDetails" maxlength="300" placeholder="e.g. nuts, shellfish, lactose">
+        </div>
+        <p class="fine-print">We only use this to plan the catering for this event.</p>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="hp">Leave this empty</label>
+        <input type="text" id="hp" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Send RSVP</button>
+      <p class="msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="confirmation" id="confirmation" hidden>
+      <p class="script-small">Thank you</p>
+      <p id="confirmationText"></p>
+      <p class="note" id="confirmationNote"></p>
+      <button type="button" class="link-btn" id="changeBtn">Change my answer</button>
+    </div>
+  </section>
+
+  <div class="host-link">
+    <button type="button" id="hostToggle" aria-expanded="false" aria-controls="hostPanel">Edutel organisers — view RSVPs</button>
+  </div>
+
+  <section class="host-panel" id="hostPanel" aria-label="RSVP responses" hidden>
+    <form class="host-gate" id="hostGate">
+      <p class="card-sub">Enter the organisers’ passcode</p>
+      <input type="password" id="passcode" autocomplete="current-password" placeholder="Passcode" aria-label="Passcode">
+      <button type="submit" class="small-btn">View responses</button>
+      <p class="msg" id="gateMsg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div id="hostBody" hidden>
+      <div class="summary-row">
+        <div><span id="sumYes">0</span><small>Attending</small></div>
+        <div><span id="sumNo">0</span><small>Not attending</small></div>
+        <div><span id="sumAll">0</span><small>Responses</small></div>
+      </div>
+
+      <h3 class="panel-heading">Dietary requirements <em>(attending)</em></h3>
+      <ul class="diet-list" id="dietList"></ul>
+
+      <div class="panel-actions">
+        <a class="small-btn" id="sheetLink" target="_blank" rel="noopener" hidden>Open Google Sheet</a>
+        <button type="button" class="small-btn ghost" id="copyEmails">Copy attending emails</button>
+        <button type="button" class="small-btn ghost" id="refreshBtn">Refresh</button>
+      </div>
+      <p class="msg" id="panelMsg" role="status" aria-live="polite"></p>
+
+      <h3 class="panel-heading">Responses</h3>
+      <div id="guestList"></div>
+    </div>
+  </section>
+
+  <footer>More details to follow.</footer>
+</div>
+
+<script>
+  // Apps Script web app
+  const API_URL = 'https://script.google.com/macros/s/AKfycbyNjr5fEFpPC5xdW2VrOGHRagIA1wYr2Vaep7QgWOhe9Z-EFQwUF5PcoKlBtl_cC-s/exec';
+
+  // Must match DIET_OPTIONS in apps-script/Code.gs.
+  const DIET_OPTIONS = [
+    'No dietary requirements',
+    'Vegetarian',
+    'Vegan',
+    'Halaal',
+    'Food allergies or intolerances',
+  ];
+  const DIET_ALLERGY = 'Food allergies or intolerances';
+
+  const CONNECTED = /^https?:\/\//.test(API_URL);
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const $ = id => document.getElementById(id);
+
+  let attending = null;  // 'Yes' | 'No' | null
+  let passcode = '';     // kept in memory only, for the Refresh button
+  let entries = [];
+
+  $('previewBanner').hidden = CONNECTED;
+  for (const option of DIET_OPTIONS) $('dietary').add(new Option(option, option));
+
+  // ---------------- RSVP form ----------------
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      attending = btn.dataset.value;
+      document.querySelectorAll('.toggle-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      $('dietBlock').hidden = attending !== 'Yes';
+    });
+  });
+
+  $('dietary').addEventListener('change', () => {
+    $('detailsBlock').hidden = $('dietary').value !== DIET_ALLERGY;
+  });
+
+  $('rsvpForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const dietary = attending === 'Yes' ? $('dietary').value : '';
+    const entry = {
+      name: $('name').value.trim(),
+      email: $('email').value.trim(),
+      phone: $('phone').value.trim(),
+      attending,
+      dietary,
+      dietaryDetails: dietary === DIET_ALLERGY ? $('dietaryDetails').value.trim() : '',
+      hp: $('hp').value,
+    };
+
+    const problem = findProblem(entry);
+    if (problem) {
+      showMsg('formMsg', problem[1], true);
+      $(problem[0]).focus();
+      return;
+    }
+    if (!CONNECTED) {
+      showMsg('formMsg', 'Preview only: this page isn’t connected to the Google Sheet yet.', true);
+      return;
+    }
+
+    $('submitBtn').disabled = true;
+    showMsg('formMsg', 'Sending…');
+    try {
+      const data = await callApi(entry);
+      showConfirmation(entry, data.updated);
+    } catch (err) {
+      showMsg('formMsg', err.message, true);
+    } finally {
+      $('submitBtn').disabled = false;
+    }
+  });
+
+  // Returns [field id, message] for the first thing that needs fixing, or null.
+  function findProblem(en) {
+    if (!en.name) return ['name', 'Please tell us your full name.'];
+    if (!EMAIL_RE.test(en.email)) return ['email', 'Please enter a valid work email.'];
+    if (en.phone && !isPhone(en.phone)) return ['phone', 'Please check your cellphone number, or leave it blank.'];
+    if (!en.attending) return ['attendYes', 'Please let us know if you can make it.'];
+    if (en.attending === 'Yes' && !en.dietary) return ['dietary', 'Please choose a dietary requirement.'];
+    if (en.dietary === DIET_ALLERGY && !en.dietaryDetails) return ['dietaryDetails', 'Please tell us about your allergy or intolerance.'];
+    return null;
+  }
+
+  function isPhone(phone) {
+    const digits = phone.replace(/\D/g, '').length;
+    return /^[0-9+()\-\s]+$/.test(phone) && digits >= 9 && digits <= 15;
+  }
+
+  function showConfirmation(en, updated) {
+    const firstName = en.name.split(/\s+/)[0];
+    $('confirmationText').textContent = en.attending === 'Yes'
+      ? `We can’t wait to celebrate with you, ${firstName}.`
+      : `We’ll miss you, ${firstName}. Thank you for letting us know.`;
+    $('confirmationNote').textContent = updated
+      ? 'We’ve updated your earlier answer.'
+      : 'Plans changed? Come back any time and send the form again with the same email.';
+    $('formMsg').textContent = '';
+    $('rsvpForm').hidden = true;
+    $('confirmation').hidden = false;
+  }
+
+  $('changeBtn').addEventListener('click', () => {
+    $('confirmation').hidden = true;
+    $('rsvpForm').hidden = false;
+    $('name').focus();
+  });
+
+  function showMsg(id, text, isError = false) {
+    $(id).textContent = text;
+    $(id).classList.toggle('error', isError);
+  }
+
+  // Sends JSON to the Apps Script web app and returns its reply.
+  async function callApi(payload) {
+    let data;
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        // Plain text keeps this a "simple" request, so the browser skips the
+        // CORS preflight check that Apps Script can't answer.
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+      data = await res.json();
+    } catch (err) {
+      throw new Error('We couldn’t reach the server. Please check your connection and try again.');
+    }
+    if (!data.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
+    return data;
+  }
+
+  // ---------------- Organiser view ----------------
+  $('hostToggle').addEventListener('click', () => {
+    const opening = $('hostPanel').hidden;
+    $('hostPanel').hidden = !opening;
+    $('hostToggle').setAttribute('aria-expanded', String(opening));
+    if (opening && !passcode) $('passcode').focus();
+  });
+
+  $('hostGate').addEventListener('submit', async e => {
+    e.preventDefault();
+    const code = $('passcode').value;
+    if (!code) return;
+    if (!CONNECTED) return showMsg('gateMsg', 'Preview only: this page isn’t connected yet.', true);
+    showMsg('gateMsg', 'Checking…');
+    try {
+      render(await callApi({ action: 'list', passcode: code }));
+      passcode = code;
+      $('passcode').value = '';
+      $('hostGate').hidden = true;
+      $('hostBody').hidden = false;
+    } catch (err) {
+      showMsg('gateMsg', err.message, true);
+    }
+  });
+
+  $('refreshBtn').addEventListener('click', async () => {
+    showMsg('panelMsg', 'Refreshing…');
+    try {
+      render(await callApi({ action: 'list', passcode }));
+      showMsg('panelMsg', '');
+    } catch (err) {
+      showMsg('panelMsg', err.message, true);
+    }
+  });
+
+  $('copyEmails').addEventListener('click', async () => {
+    const emails = entries.filter(en => en.attending === 'Yes').map(en => en.email);
+    if (!emails.length) return showMsg('panelMsg', 'No one has accepted yet.');
+    try {
+      await navigator.clipboard.writeText(emails.join('; '));
+      showMsg('panelMsg', `Copied ${emails.length} email${emails.length === 1 ? '' : 's'}. Paste them into the Bcc line.`);
+    } catch (err) {
+      showMsg('panelMsg', 'Couldn’t copy automatically. Open the Google Sheet instead.', true);
+    }
+  });
+
+  function render(data) {
+    entries = data.entries.slice().sort((a, b) => new Date(b.updated) - new Date(a.updated));
+    const yes = entries.filter(en => en.attending === 'Yes');
+    $('sumYes').textContent = yes.length;
+    $('sumNo').textContent = entries.filter(en => en.attending === 'No').length;
+    $('sumAll').textContent = entries.length;
+
+    $('dietList').innerHTML = DIET_OPTIONS.map(option =>
+      `<li><span>${esc(option)}</span><strong>${yes.filter(en => en.dietary === option).length}</strong></li>`).join('');
+
+    if (data.sheetUrl) {
+      $('sheetLink').href = data.sheetUrl;
+      $('sheetLink').hidden = false;
+    }
+
+    $('guestList').innerHTML = entries.length
+      ? entries.map(guestHtml).join('')
+      : '<p class="empty-note">No RSVPs yet. Responses will appear here as staff reply.</p>';
+  }
+
+  function guestHtml(en) {
+    const yes = en.attending === 'Yes';
+    const contact = [en.email, en.phone].filter(Boolean).map(esc).join(' · ');
+    const diet = yes ? esc(en.dietary) + (en.dietaryDetails ? `: ${esc(en.dietaryDetails)}` : '') : '';
+    return `<div class="guest-entry">
+        <div class="g-name"><span>${esc(en.name)}</span><span class="g-status${yes ? ' yes' : ''}">${yes ? 'Attending' : 'Not attending'}</span></div>
+        <div class="g-detail">${contact}</div>
+        ${diet ? `<div class="g-detail">${diet}</div>` : ''}
+      </div>`;
+  }
+
+  function esc(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  }
+</script>
+</body>
+</html>
