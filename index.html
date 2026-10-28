@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0d1626">
 <title>Edutel Year-End Function 2026 — RSVP</title>
 <meta name="description" content="Save the date: Edutel Year-End Function, Friday 20 November 2026. Kindly RSVP by Friday 30 October 2026.">
 <meta property="og:type" content="website">
@@ -11,179 +12,263 @@
 <meta property="og:description" content="Friday, 20 November 2026. Kindly RSVP by Friday, 30 October.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   /* Brand: colours, fonts, logo size */
   :root{
-    --paper:#f8f6f1;          /* page background */
-    --card:#ffffff;           /* RSVP card and organiser panel */
-    --ink:#1c1b19;            /* text, buttons, selected answers */
-    --on-ink:#ffffff;         /* text on top of --ink */
-    --muted:#4a453e;          /* italic and secondary text */
-    --hair:#d9d3c7;           /* thin lines and borders */
-    --error:#9b2c2c;          /* "please fill in..." messages */
+    --night:#0d1626;          /* page background */
+    --night-soft:#18263f;     /* background glow */
+    --gold:#d6ab5e;           /* accent */
+    --gold-deep:#c39445;      /* accent, hover */
+    --gold-ink:#8a6420;       /* accent text on light backgrounds */
+    --cream:#f5efe3;          /* text on the dark background */
+    --mist:#a7b1c2;           /* secondary text on the dark background */
+    --paper:#fffdf8;          /* RSVP card */
+    --ink:#121c2b;            /* text on the card */
+    --slate:#5b6576;          /* secondary text on the card */
+    --line:#e3dccd;           /* borders on the card */
+    --error:#b42318;
 
-    --font-script:'Pinyon Script', cursive;       /* "Save the Date" */
-    --font-display:'Cormorant Garamond', serif;   /* headings, labels, buttons */
-    --font-body:'EB Garamond', serif;             /* everything else */
+    --font-display:'Outfit', system-ui, sans-serif;
+    --font-accent:'Instrument Serif', Georgia, serif;
+    --font-body:'Outfit', system-ui, sans-serif;
 
-    --logo-height:64px;
+    --logo-height:44px;
   }
 
   *{ box-sizing:border-box; }
   [hidden]{ display:none !important; }
   html,body{ margin:0; padding:0; }
   body{
-    background:var(--paper);
-    background-image:radial-gradient(circle at 1px 1px, rgba(28,27,25,0.05) 1px, transparent 0);
-    background-image:radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 0);
-    background-size:22px 22px;
-    color:var(--ink);
-    font-family:var(--font-body);
     min-height:100vh;
+    background:
+      radial-gradient(900px 520px at 85% -8%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 65%),
+      radial-gradient(700px 480px at -15% 10%, var(--night-soft), transparent 70%),
+      var(--night);
+    color:var(--cream);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-  .page{ max-width:640px; margin:0 auto; padding:56px 28px 72px; }
+  .page{ max-width:680px; margin:0 auto; padding:32px 24px 56px; }
+  .sr-only{ position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  button:focus-visible, a:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 
   .preview-banner{
-    border:1px dashed var(--muted); background:var(--card); color:var(--muted);
-    font-style:italic; font-size:14px; text-align:center; padding:10px 14px; margin:0 0 32px;
+    margin:0 0 24px; padding:10px 14px; border:1px dashed var(--gold); border-radius:10px;
+    font-size:14px; text-align:center;
   }
 
   /* ---------- Masthead ---------- */
-  .masthead{ display:flex; align-items:center; gap:18px; }
-  .brand-mark{ flex:0 0 auto; display:flex; align-items:center; }
-  .logo{ display:block; height:var(--logo-height); width:auto; max-width:180px; visibility:hidden; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{ display:flex; align-items:center; }
+  .logo{ display:block; height:var(--logo-height); width:auto; max-width:200px; visibility:hidden; }
   .logo.loaded{ visibility:visible; }
   .monogram{
     display:none; align-items:center; justify-content:center;
-    width:var(--logo-height); height:var(--logo-height); border:1px solid var(--ink); border-radius:50%;
-    font-family:var(--font-display); font-weight:600; font-size:calc(var(--logo-height) * 0.52); line-height:1;
+    width:var(--logo-height); height:var(--logo-height); border:1.5px solid var(--gold); border-radius:50%;
+    color:var(--gold); font:700 calc(var(--logo-height) * 0.46)/1 var(--font-display);
   }
   .brand-mark.no-logo .monogram{ display:flex; }
-  .from-label{ font-family:var(--font-display); font-weight:600; letter-spacing:0.2em; font-size:15px; text-transform:uppercase; margin:0 0 6px; }
-  .from-sub{ font-style:italic; color:var(--muted); font-size:16px; margin:0; }
+  .brand-name{ margin:0; font:600 19px/1 var(--font-display); letter-spacing:0.01em; }
+  .has-logo .brand-name{ display:none; }
+  .pill{
+    margin:0; padding:7px 14px; border:1px solid color-mix(in srgb, var(--gold) 60%, transparent); border-radius:999px;
+    color:var(--gold); font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; white-space:nowrap;
+  }
 
-  .rule{ border:none; border-top:1px solid var(--hair); margin:36px 0 26px; }
+  /* ---------- Hero ---------- */
+  .hero{ position:relative; padding:72px 0 0; }
+  .sparkle{ position:absolute; width:16px; height:16px; color:var(--gold); animation:twinkle 3.4s ease-in-out infinite; }
+  .sparkle svg{ display:block; width:100%; height:100%; fill:currentColor; }
+  .sparkle.s1{ top:40px; right:30%; }
+  .sparkle.s2{ top:120px; right:6%; width:12px; height:12px; animation-delay:1.1s; }
+  .sparkle.s3{ top:250px; right:2px; width:10px; height:10px; animation-delay:2.2s; }
+  @keyframes twinkle{
+    0%,100%{ opacity:0.25; transform:scale(0.7) rotate(0deg); }
+    50%{ opacity:1; transform:scale(1) rotate(25deg); }
+  }
+  .eyebrow{ position:relative; margin:0 0 12px; font:italic 400 30px/1 var(--font-accent); color:var(--gold); }
+  .title{ position:relative; margin:0; font:800 clamp(50px, 13.5vw, 88px)/0.92 var(--font-display); letter-spacing:-0.035em; }
+  .title .line{ display:block; }
+  .title .year{ color:transparent; -webkit-text-stroke:2px var(--gold); letter-spacing:-0.02em; }
+  .intro{
+    position:relative; max-width:520px; margin:28px 0 0;
+    font:400 22px/1.4 var(--font-accent); color:color-mix(in srgb, var(--cream) 90%, transparent);
+  }
 
-  /* ---------- Save the Date ---------- */
-  .hero{ text-align:center; margin:0; font-weight:400; }
-  .hero .script{ display:block; font-family:var(--font-script); font-size:clamp(78px, 22vw, 112px); line-height:0.95; }
-  .hero .the{ display:block; font-family:var(--font-script); font-size:clamp(28px, 8vw, 34px); line-height:1; margin:-8px 0 -4px; }
-  .date-line{ text-align:center; font-family:var(--font-display); font-weight:600; letter-spacing:0.06em; font-size:21px; margin:22px 0 0; }
-  .intro{ text-align:center; font-style:italic; color:var(--muted); font-size:17px; line-height:1.5; max-width:470px; margin:12px auto 0; }
+  .facts{
+    display:grid; grid-template-columns:1.25fr 1.1fr 1fr; margin:36px 0 0;
+    border-top:1px solid color-mix(in srgb, var(--cream) 16%, transparent);
+    border-bottom:1px solid color-mix(in srgb, var(--cream) 16%, transparent);
+  }
+  .facts div{ padding:16px 16px 16px 0; }
+  .facts div + div{ padding-left:18px; border-left:1px solid color-mix(in srgb, var(--cream) 16%, transparent); }
+  .facts dt{ margin:0 0 6px; font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); }
+  .facts dd{ margin:0; font-size:17px; font-weight:500; line-height:1.3; }
 
-  /* ---------- RSVP card ---------- */
-  .card{ background:var(--card); border:1px solid var(--hair); padding:40px 34px; margin-top:44px; position:relative; }
-  .card::before, .card::after{ content:""; position:absolute; width:14px; height:14px; border:1px solid var(--ink); }
-  .card::before{ top:8px; left:8px; border-right:none; border-bottom:none; }
-  .card::after{ bottom:8px; right:8px; border-left:none; border-top:none; }
-  .card h2{ font-family:var(--font-display); font-weight:600; letter-spacing:0.16em; text-transform:uppercase; font-size:17px; text-align:center; margin:0 0 6px; }
-  .card-sub{ text-align:center; font-style:italic; color:var(--muted); font-size:15px; margin:0 0 30px; }
+  /* ---------- RSVP ticket ---------- */
+  .ticket{ margin-top:44px; color:var(--ink); filter:drop-shadow(0 22px 40px rgba(0, 0, 0, 0.35)); }
+  .ticket-head, .ticket-body{ --notch:13px; }
+  .ticket-head{
+    display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+    padding:24px 30px 22px; background:var(--gold); border-radius:18px 18px 0 0;
+    -webkit-mask:
+      radial-gradient(circle at 0 100%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 0 0 / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 100%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 100% 0 / 51% 100% no-repeat;
+            mask:
+      radial-gradient(circle at 0 100%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 0 0 / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 100%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 100% 0 / 51% 100% no-repeat;
+  }
+  .ticket-kicker{ margin:0 0 4px; font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 82%, transparent); }
+  .ticket h2{ margin:0; font:800 34px/1 var(--font-display); letter-spacing:-0.02em; }
+  .ticket-due{ margin:0; text-align:right; font-size:13px; line-height:1.35; color:color-mix(in srgb, var(--ink) 82%, transparent); }
+  .ticket-due strong{ display:block; font-size:16px; font-weight:700; color:var(--ink); }
+  .ticket-body{
+    padding:30px 30px 26px; background:var(--paper); border-top:2px dashed var(--line); border-radius:0 0 18px 18px;
+    -webkit-mask:
+      radial-gradient(circle at 0 0, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 0 0 / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 0, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 100% 0 / 51% 100% no-repeat;
+            mask:
+      radial-gradient(circle at 0 0, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 0 0 / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 0, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) 100% 0 / 51% 100% no-repeat;
+  }
 
-  .label{ display:block; font-family:var(--font-display); font-weight:600; letter-spacing:0.05em; font-size:14px; text-transform:uppercase; margin:24px 0 8px; }
+  .label{ display:block; margin:22px 0 8px; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--slate); }
   form > .label:first-child{ margin-top:0; }
-  .optional{ font-family:var(--font-body); font-weight:400; font-style:italic; text-transform:none; letter-spacing:0; color:var(--muted); }
+  .optional{ font-weight:400; letter-spacing:0.02em; text-transform:none; }
 
   input[type="text"], input[type="email"], input[type="tel"], input[type="password"], select{
-    width:100%; font-family:var(--font-body); font-size:17px; color:var(--ink);
-    padding:10px 4px; border:none; border-bottom:1px solid var(--hair); border-radius:0;
-    background:transparent; outline:none; transition:border-color .2s ease;
+    width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:10px; outline:none;
+    background:#fff; color:var(--ink); font:400 16px/1.3 var(--font-body);
+    transition:border-color .15s ease, box-shadow .15s ease;
   }
-  input:focus, select:focus{ border-bottom-color:var(--ink); }
-  input::placeholder{ color:var(--muted); opacity:0.6; }
+  input:focus, select:focus{ border-color:var(--ink); box-shadow:0 0 0 3px color-mix(in srgb, var(--gold) 40%, transparent); }
+  input::placeholder{ color:var(--slate); opacity:0.7; }
 
   .select-wrap{ position:relative; }
   .select-wrap::after{
-    content:""; position:absolute; right:8px; top:50%; width:7px; height:7px; pointer-events:none;
-    border-right:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); transform:translateY(-75%) rotate(45deg);
+    content:""; position:absolute; right:16px; top:50%; width:7px; height:7px; pointer-events:none;
+    border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); transform:translateY(-70%) rotate(45deg);
   }
-  select{ appearance:none; -webkit-appearance:none; padding-right:28px; cursor:pointer; }
-  select:invalid{ color:var(--muted); }
+  select{ appearance:none; -webkit-appearance:none; padding-right:40px; cursor:pointer; }
+  select:invalid{ color:var(--slate); }
   option{ color:var(--ink); }
+  .fine-print{ margin:10px 0 0; font-size:13px; color:var(--slate); }
 
-  .fine-print{ font-style:italic; color:var(--muted); font-size:14px; margin:12px 0 0; }
-
-  .toggle-row{ display:flex; gap:12px; }
+  .choice-row{ display:flex; gap:10px; }
   .toggle-btn{
-    flex:1; padding:12px 10px; border:1px solid var(--hair); background:var(--paper); color:var(--ink);
-    font-family:var(--font-display); font-weight:500; letter-spacing:0.08em; font-size:15px; text-transform:uppercase;
-    cursor:pointer; transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+    flex:1; display:flex; align-items:center; justify-content:center; gap:9px; padding:14px 10px;
+    border:1.5px solid var(--line); border-radius:12px; background:#fff; color:var(--ink);
+    font:600 15px var(--font-body); cursor:pointer; transition:background-color .15s ease, border-color .15s ease, color .15s ease;
   }
+  .toggle-btn svg{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
   .toggle-btn:hover{ border-color:var(--ink); }
-  .toggle-btn[aria-pressed="true"]{ background:var(--ink); color:var(--on-ink); border-color:var(--ink); }
-  button:focus-visible, a:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+  .toggle-btn[aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+  .toggle-btn[aria-pressed="true"] svg{ stroke:var(--gold); }
 
   .submit-btn{
-    width:100%; margin-top:32px; padding:14px; background:var(--ink); color:var(--on-ink); border:none;
-    font-family:var(--font-display); font-weight:600; letter-spacing:0.14em; text-transform:uppercase; font-size:15px;
-    cursor:pointer; transition:opacity .15s ease;
+    width:100%; display:flex; align-items:center; justify-content:center; gap:10px; margin-top:28px; padding:15px;
+    border:none; border-radius:12px; background:var(--gold); color:var(--ink); cursor:pointer;
+    font:700 15px var(--font-body); letter-spacing:0.08em; text-transform:uppercase; transition:background-color .15s ease;
   }
-  .submit-btn:hover{ opacity:0.85; }
-  .submit-btn:disabled{ opacity:0.5; cursor:default; }
+  .submit-btn svg{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; transition:transform .15s ease; }
+  .submit-btn:hover{ background:var(--gold-deep); }
+  .submit-btn:hover svg{ transform:translateX(3px); }
+  .submit-btn:disabled{ opacity:0.6; cursor:default; }
 
-  .msg{ text-align:center; font-style:italic; color:var(--muted); font-size:15px; margin:16px 0 0; min-height:1.2em; }
+  .msg{ margin:14px 0 0; min-height:1.3em; text-align:center; font-size:14px; color:var(--slate); }
   .msg.error{ color:var(--error); }
 
-  .confirmation{ text-align:center; padding:8px 6px 0; }
-  .confirmation p{ font-size:17px; color:var(--muted); margin:0; }
-  .confirmation .script-small{ font-family:var(--font-script); font-size:52px; line-height:1.1; color:var(--ink); margin:0 0 10px; }
-  .confirmation .note{ font-size:15px; font-style:italic; margin-top:12px; }
+  .hp{ position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; } /* spam trap */
+
+  .confirmation{ padding:6px 4px 2px; text-align:center; }
+  .check{
+    display:flex; align-items:center; justify-content:center; width:58px; height:58px; margin:0 auto 14px;
+    border-radius:50%; background:var(--ink); color:var(--gold);
+  }
+  .check svg{ width:28px; height:28px; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+  .confirmation p{ margin:0; font-size:17px; }
+  .confirmation .thanks{ margin:0 0 8px; font:italic 400 46px/1.05 var(--font-accent); }
+  .confirmation .note{ margin-top:10px; font-size:14px; color:var(--slate); }
   .link-btn{
-    background:none; border:none; padding:6px; margin-top:14px; cursor:pointer;
-    font-family:var(--font-body); font-style:italic; font-size:15px; color:var(--muted); text-decoration:underline;
+    margin-top:16px; padding:6px; border:none; background:none; cursor:pointer;
+    font:500 14px var(--font-body); color:var(--gold-ink); text-decoration:underline; text-underline-offset:3px;
   }
 
-  /* Spam trap: hidden from people, but bots fill it in. */
-  .hp{ position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
+  .confetti-bit{
+    position:fixed; z-index:10; width:8px; height:13px; border-radius:2px; pointer-events:none;
+    animation:burst 1.4s cubic-bezier(0.15, 0.7, 0.35, 1) forwards;
+  }
+  @keyframes burst{
+    from{ opacity:1; transform:translate(-50%, -50%) rotate(0deg); }
+    to{ opacity:0; transform:translate(calc(-50% + var(--x)), calc(-50% + var(--y))) rotate(var(--r)); }
+  }
 
   /* ---------- Organiser view ---------- */
-  .host-link{ text-align:center; margin-top:40px; }
+  .host-link{ margin-top:36px; text-align:center; }
   .host-link button{
-    background:none; border:none; padding:6px; cursor:pointer;
-    font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--muted); text-decoration:underline;
+    padding:6px; border:none; background:none; cursor:pointer;
+    font:500 13px var(--font-body); color:var(--mist); text-decoration:underline; text-underline-offset:3px;
   }
-  .host-panel{ margin-top:20px; border:1px solid var(--hair); background:var(--card); padding:32px 26px; }
+  .host-panel{ margin-top:14px; padding:28px; border-radius:18px; background:var(--paper); color:var(--ink); }
   .host-gate{ text-align:center; }
-  .host-gate .card-sub{ margin-bottom:14px; }
-  .host-gate input{ display:block; max-width:240px; margin:0 auto 18px; text-align:center; }
+  .gate-title{ margin:0 0 14px; font-size:15px; color:var(--slate); }
+  .host-gate input{ display:block; max-width:260px; margin:0 auto 14px; text-align:center; }
   .small-btn{
-    display:inline-block; background:var(--ink); color:var(--on-ink); border:1px solid var(--ink); padding:9px 18px;
-    font-family:var(--font-display); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:13px;
-    text-decoration:none; cursor:pointer;
+    display:inline-flex; align-items:center; padding:10px 16px; border:1px solid var(--ink); border-radius:10px;
+    background:var(--ink); color:var(--paper); font:600 13px var(--font-body); letter-spacing:0.04em; text-decoration:none; cursor:pointer;
   }
-  .small-btn.ghost{ background:transparent; color:var(--ink); border-color:var(--hair); }
+  .small-btn.ghost{ background:transparent; color:var(--ink); border-color:var(--line); }
   .small-btn.ghost:hover{ border-color:var(--ink); }
 
-  .summary-row{ display:flex; justify-content:space-around; text-align:center; padding-bottom:22px; border-bottom:1px solid var(--hair); }
-  .summary-row span{ display:block; font-family:var(--font-body); font-weight:500; font-size:30px; line-height:1.2; font-variant-numeric:lining-nums; }
-  .summary-row small{ font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+  .summary-row{ display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; }
+  .summary-row div{ padding:14px 8px; border:1px solid var(--line); border-radius:12px; text-align:center; }
+  .summary-row span{ display:block; font:700 30px/1.1 var(--font-display); font-variant-numeric:lining-nums; }
+  .summary-row small{ font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate); }
 
-  .panel-heading{ font-family:var(--font-display); font-weight:600; letter-spacing:0.12em; text-transform:uppercase; font-size:14px; margin:26px 0 6px; }
-  .panel-heading em{ font-family:var(--font-body); font-weight:400; text-transform:none; letter-spacing:0; color:var(--muted); }
-  .diet-list{ list-style:none; margin:0; padding:0; }
-  .diet-list li{ display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px dotted var(--hair); font-size:16px; }
-  .diet-list strong{ font-weight:500; font-variant-numeric:lining-nums tabular-nums; }
-  .panel-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .panel-heading{ margin:26px 0 6px; font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--slate); }
+  .panel-heading em{ font-style:normal; font-weight:400; letter-spacing:0; text-transform:none; }
+  .diet-list{ margin:0; padding:0; list-style:none; }
+  .diet-list li{ display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px solid var(--line); font-size:15px; }
+  .diet-list strong{ font-weight:700; font-variant-numeric:lining-nums tabular-nums; }
+  .panel-actions{ display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
 
-  .guest-entry{ padding:14px 0; border-bottom:1px solid var(--hair); }
+  .guest-entry{ padding:14px 0; border-bottom:1px solid var(--line); }
   .guest-entry:last-child{ border-bottom:none; }
-  .g-name{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; font-family:var(--font-display); font-weight:600; font-size:19px; }
-  .g-status{ font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:3px 8px; border:1px solid var(--ink); white-space:nowrap; }
-  .g-status.yes{ background:var(--ink); color:var(--on-ink); }
-  .g-detail{ font-size:15px; color:var(--muted); margin-top:3px; overflow-wrap:anywhere; }
-  .empty-note{ text-align:center; font-style:italic; color:var(--muted); padding:16px 0; margin:0; }
+  .g-name{ display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:17px; font-weight:600; }
+  .g-status{
+    padding:4px 10px; border:1px solid var(--line); border-radius:999px; white-space:nowrap;
+    font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate);
+  }
+  .g-status.yes{ background:var(--ink); border-color:var(--ink); color:var(--gold); }
+  .g-detail{ margin-top:3px; font-size:14px; color:var(--slate); overflow-wrap:anywhere; }
+  .empty-note{ margin:0; padding:16px 0; text-align:center; color:var(--slate); }
 
-  footer{ text-align:center; font-style:italic; color:var(--muted); font-size:15px; margin-top:56px; }
+  .foot{ margin-top:44px; text-align:center; font-size:13px; color:var(--mist); }
 
-  @media (max-width:480px){
-    .page{ padding:36px 16px 56px; }
-    .masthead{ gap:14px; }
-    .from-label{ font-size:13px; letter-spacing:0.16em; }
-    .from-sub{ font-size:15px; }
-    .card{ padding:32px 20px; }
-    .toggle-btn{ font-size:14px; letter-spacing:0.05em; padding:12px 6px; }
-    .host-panel{ padding:26px 18px; }
+  @media (max-width:560px){
+    .page{ padding:24px 16px 48px; }
+    .pill{ padding:6px 11px; font-size:11px; letter-spacing:0.1em; }
+    .hero{ padding-top:56px; }
+    .title .year{ -webkit-text-stroke-width:1.5px; }
+    .sparkle.s1{ top:30px; }
+    .sparkle.s3{ top:200px; }
+    .eyebrow{ font-size:26px; }
+    .intro{ font-size:20px; }
+    .facts{ grid-template-columns:1fr 1fr; }
+    .facts div:first-child{ grid-column:1 / -1; border-bottom:1px solid color-mix(in srgb, var(--cream) 16%, transparent); }
+    .facts div:nth-child(2){ padding-left:0; border-left:none; }
+    .ticket-head{ padding:20px 20px 18px; }
+    .ticket h2{ font-size:30px; }
+    .ticket-body{ padding:26px 20px 22px; }
+    .host-panel{ padding:22px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sparkle{ animation:none; opacity:0.7; }
+    .submit-btn svg, .toggle-btn{ transition:none; }
   }
 </style>
 </head>
@@ -192,73 +277,97 @@
   <p class="preview-banner" id="previewBanner" hidden>Preview only: this page isn't connected to the Google Sheet yet, so RSVPs won't be saved.</p>
 
   <header class="masthead">
-    <div class="brand-mark">
-      <!-- Tries assets/edutel-logo.svg, then .png; if neither exists, shows the "E" monogram. -->
-      <img class="logo" src="assets/edutel-logo.svg" alt="Edutel"
-           onload="this.classList.add('loaded')"
-           onerror="if (!this.dataset.retried) { this.dataset.retried = '1'; this.src = 'assets/edutel-logo.png'; } else { this.parentNode.classList.add('no-logo'); this.remove(); }">
-      <span class="monogram" aria-hidden="true">E</span>
+    <div class="brand">
+      <div class="brand-mark">
+        <!-- Tries assets/edutel-logo.svg, then .png; falls back to the "E" monogram. -->
+        <img class="logo" src="assets/edutel-logo.svg" alt="Edutel"
+             onload="this.classList.add('loaded'); this.closest('.brand').classList.add('has-logo');"
+             onerror="if (!this.dataset.retried) { this.dataset.retried = '1'; this.src = 'assets/edutel-logo.png'; } else { this.parentNode.classList.add('no-logo'); this.remove(); }">
+        <span class="monogram" aria-hidden="true">E</span>
+      </div>
+      <p class="brand-name">Edutel</p>
     </div>
-    <div>
-      <p class="from-label">Edutel Year-End Function 2026</p>
-      <p class="from-sub">Celebrating our year together</p>
-    </div>
+    <p class="pill">Staff invitation</p>
   </header>
 
-  <hr class="rule">
+  <section class="hero" aria-labelledby="eventTitle">
+    <span class="sparkle s1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+    <span class="sparkle s2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+    <span class="sparkle s3" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
 
-  <h1 class="hero"><span class="script">Save</span> <span class="the">the</span> <span class="script">Date</span></h1>
-  <p class="date-line"><time datetime="2026-11-20">Friday, 20 November 2026</time></p>
-  <p class="intro">Let’s come together to celebrate the year, reflect on our achievements, and enjoy a memorable time with our colleagues!</p>
+    <p class="eyebrow">Save the date</p>
+    <h1 class="title" id="eventTitle"><span class="line">Year-End</span><span class="line">Function <span class="year">2026</span></span></h1>
+    <p class="intro">Let’s come together to celebrate the year, reflect on our achievements, and enjoy a memorable time with our colleagues!</p>
 
-  <section class="card" aria-labelledby="rsvpTitle">
-    <h2 id="rsvpTitle">RSVP</h2>
-    <p class="card-sub">Kindly respond by Friday, 30 October 2026</p>
+    <dl class="facts">
+      <div><dt>Date</dt><dd><time datetime="2026-11-20">Friday, 20 November 2026</time></dd></div>
+      <div><dt>RSVP by</dt><dd><time datetime="2026-10-30">Friday, 30 October</time></dd></div>
+      <div><dt>Details</dt><dd>More to follow</dd></div>
+    </dl>
+  </section>
 
-    <form id="rsvpForm" novalidate>
-      <label class="label" for="name">Full name</label>
-      <input type="text" id="name" autocomplete="name" maxlength="100" placeholder="e.g. Thandi Nkosi">
-
-      <label class="label" for="email">Work email</label>
-      <input type="email" id="email" autocomplete="email" maxlength="254" placeholder="We’ll send the event details here">
-
-      <label class="label" for="phone">Cellphone number <span class="optional">(optional)</span></label>
-      <input type="tel" id="phone" autocomplete="tel" maxlength="30" placeholder="e.g. 082 123 4567">
-
-      <p class="label" id="attendingLabel">Will you be attending?</p>
-      <div class="toggle-row" role="group" aria-labelledby="attendingLabel">
-        <button type="button" class="toggle-btn" id="attendYes" data-value="Yes" aria-pressed="false">Joyfully accept</button>
-        <button type="button" class="toggle-btn" id="attendNo" data-value="No" aria-pressed="false">Regretfully decline</button>
+  <section class="card ticket" aria-labelledby="rsvpTitle">
+    <div class="ticket-head">
+      <div>
+        <p class="ticket-kicker">Your reply</p>
+        <h2 id="rsvpTitle">RSVP</h2>
       </div>
+      <p class="ticket-due">Kindly respond by <strong>Friday, 30 October</strong></p>
+    </div>
 
-      <div id="dietBlock" hidden>
-        <label class="label" for="dietary">Dietary requirement</label>
-        <div class="select-wrap">
-          <select id="dietary" required>
-            <option value="">Please choose…</option>
-          </select>
+    <div class="ticket-body">
+      <form id="rsvpForm" novalidate>
+        <label class="label" for="name">Full name</label>
+        <input type="text" id="name" autocomplete="name" maxlength="100" placeholder="e.g. Thandi Nkosi">
+
+        <label class="label" for="email">Work email</label>
+        <input type="email" id="email" autocomplete="email" maxlength="254" placeholder="We’ll send the event details here">
+
+        <label class="label" for="phone">Cellphone number <span class="optional">(optional)</span></label>
+        <input type="tel" id="phone" autocomplete="tel" maxlength="30" placeholder="e.g. 082 123 4567">
+
+        <p class="label" id="attendingLabel">Will you be attending?</p>
+        <div class="choice-row" role="group" aria-labelledby="attendingLabel">
+          <button type="button" class="toggle-btn" id="attendYes" data-value="Yes" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>I’ll be there
+          </button>
+          <button type="button" class="toggle-btn" id="attendNo" data-value="No" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>Can’t make it
+          </button>
         </div>
-        <div id="detailsBlock" hidden>
-          <label class="label" for="dietaryDetails">Please specify your allergy or intolerance</label>
-          <input type="text" id="dietaryDetails" maxlength="300" placeholder="e.g. nuts, shellfish, lactose">
+
+        <div id="dietBlock" hidden>
+          <label class="label" for="dietary">Dietary requirement</label>
+          <div class="select-wrap">
+            <select id="dietary" required>
+              <option value="">Please choose…</option>
+            </select>
+          </div>
+          <div id="detailsBlock" hidden>
+            <label class="label" for="dietaryDetails">Please specify your allergy or intolerance</label>
+            <input type="text" id="dietaryDetails" maxlength="300" placeholder="e.g. nuts, shellfish, lactose">
+          </div>
+          <p class="fine-print">We only use this to plan the catering for this event.</p>
         </div>
-        <p class="fine-print">We only use this to plan the catering for this event.</p>
+
+        <div class="hp" aria-hidden="true">
+          <label for="hp">Leave this empty</label>
+          <input type="text" id="hp" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Send RSVP<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="msg" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="confirmation" id="confirmation" hidden>
+        <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <p class="thanks">Thank you!</p>
+        <p id="confirmationText"></p>
+        <p class="note" id="confirmationNote"></p>
+        <button type="button" class="link-btn" id="changeBtn">Change my answer</button>
       </div>
-
-      <div class="hp" aria-hidden="true">
-        <label for="hp">Leave this empty</label>
-        <input type="text" id="hp" tabindex="-1" autocomplete="off">
-      </div>
-
-      <button type="submit" class="submit-btn" id="submitBtn">Send RSVP</button>
-      <p class="msg" id="formMsg" role="status" aria-live="polite"></p>
-    </form>
-
-    <div class="confirmation" id="confirmation" hidden>
-      <p class="script-small">Thank you</p>
-      <p id="confirmationText"></p>
-      <p class="note" id="confirmationNote"></p>
-      <button type="button" class="link-btn" id="changeBtn">Change my answer</button>
     </div>
   </section>
 
@@ -268,7 +377,7 @@
 
   <section class="host-panel" id="hostPanel" aria-label="RSVP responses" hidden>
     <form class="host-gate" id="hostGate">
-      <p class="card-sub">Enter the organisers’ passcode</p>
+      <p class="gate-title">Enter the organisers’ passcode</p>
       <input type="password" id="passcode" autocomplete="current-password" placeholder="Passcode" aria-label="Passcode">
       <button type="submit" class="small-btn">View responses</button>
       <p class="msg" id="gateMsg" role="status" aria-live="polite"></p>
@@ -296,7 +405,7 @@
     </div>
   </section>
 
-  <footer>More details to follow.</footer>
+  <footer class="foot">Edutel · Year-End Function 2026</footer>
 </div>
 
 <script>
@@ -400,6 +509,7 @@
     $('formMsg').textContent = '';
     $('rsvpForm').hidden = true;
     $('confirmation').hidden = false;
+    if (en.attending === 'Yes') celebrate();
   }
 
   $('changeBtn').addEventListener('click', () => {
@@ -407,6 +517,28 @@
     $('rsvpForm').hidden = false;
     $('name').focus();
   });
+
+  // A short burst of confetti from the tick mark.
+  function celebrate() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const box = document.querySelector('.check').getBoundingClientRect();
+    const colours = ['var(--gold)', 'var(--gold-deep)', 'var(--ink)', 'var(--line)'];
+    for (let i = 0; i < 28; i++) {
+      const bit = document.createElement('i');
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 80 + Math.random() * 110;
+      bit.className = 'confetti-bit';
+      bit.style.left = `${box.left + box.width / 2}px`;
+      bit.style.top = `${box.top + box.height / 2}px`;
+      bit.style.background = colours[i % colours.length];
+      bit.style.animationDelay = `${Math.random() * 120}ms`;
+      bit.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+      bit.style.setProperty('--y', `${Math.sin(angle) * distance - 50}px`);
+      bit.style.setProperty('--r', `${Math.random() * 540 - 270}deg`);
+      document.body.appendChild(bit);
+      bit.addEventListener('animationend', () => bit.remove());
+    }
+  }
 
   function showMsg(id, text, isError = false) {
     $(id).textContent = text;
